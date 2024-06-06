@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="shortcut icon" href="assets/iconeTEF.ico" type="image/x-icon">
+    <title>LOJA - T&F</title>
+</head>
+
+<body>
+
+    <header>
+        <div class="logo_container">
+            <img src="assets/logoTEF.png" class="logo_header" alt="Logo do CS2">
+            <p class="loja_texto">LOJA OFICIAL DO TEF</p>
+        </div>
+    </header>
+    <main>
+        <!--Tabela-->
+        <section class="container">
+            <h2 class="titulo">Encomendas</h2>
+            <label for="filtrar-tabela">Filtrar:</label>
+            <input type="text" name="filtro" id="filtrar-tabela">
+            <table class="tabela-principal">
+                <thead>
+                    <tr>
+                        <th>Nome</th>
+                        <th>Produto</th>
+                        <th>Quantidade</th>
+                        <th>Valor Unitário</th>
+                        <th>Total</th>
+                    </tr>
+                </thead>
+                <tbody id="tabela-clientes" class="tabela-clientes">
+                    <tr class="cliente">
+                        <td class="info-nome">Richard</td>
+                        <td class="info-produto">Camiseta Principal - Modelo Jogador</td>
+                        <td class="info-qtde">2</td>
+                        <td class="info-valor">350</td>
+                        <td class="info-total">-</td>
+                    </tr>
+                    <tr class="cliente">
+                        <td class="info-nome">Ramon</td>
+                        <td class="info-produto">Camiseta - Treino</td>
+                        <td class="info-qtde">2</td>
+                        <td class="info-valor">190</td>
+                        <td class="info-total">-</td>
+                    </tr>
+                    <tr class="cliente">
+                        <td class="info-nome">Kauan</td>
+                        <td class="info-produto">Shorts - Treino</td>
+                        <td class="info-qtde">3</td>
+                        <td class="info-valor">90</td>
+                        <td class="info-total">-</td>
+                    </tr>
+                    <tr class="cliente">
+                        <td class="info-nome">Pedrinho</td>
+                        <td class="info-produto">Boné - Modelo Torcedor</td>
+                        <td class="info-qtde">2</td>
+                        <td class="info-valor">100</td>
+                        <td class="info-total">-</td>
+                    </tr>
+                </tbody>
+            </table>
+            <button id="buscar-encomendas" class="botao">Buscar Encomendas</button>
+            <!--Formulário-->
+            <section class="container">
+                <h2 id="titulo-form">Adicionar nova encomenda</h2>
+                <ul id="error-list" class="error-list"></ul>
+                <form id="form-adiciona">
+                    <div class="grupo">
+                        <label for="nome">Nome:</label>
+                        <input type="text" id="nome" name="nome" placeholder="Nome:" class="campo"
+                            required>
+                    </div>
+                    <div class="grupo">
+                        <label for="qtde">Quantidade:</label>
+                        <input type="number" id="qtde" name="qtde" placeholder="Quantidade:"
+                            class="campo campo-medio" required>
+                    </div>
+                    <div class="grupo">
+                        <label for="produto">Produto:</label>
+                        <select id="produto" name="produto" class="campo2">
+                            <option value="">Selecione</option>
+                            <option>Camiseta Principal - Modelo Jogador</option>
+                            <option>Camiseta - Treino</option>
+                            <option>Shorts - Treino</option>
+                            <option>Boné - Modelo Torcedor</option>
+                            <option>Camiseta Visitante - Modelo Jogador</option>
+                            <option>Camiseta - Modelo Torcedor 2</option>
+                            <option>Shorts - Visitante</option>
+                            <option>Boné - Modelo Torcedor 2</option>
+                        </select>
+                    </div>
+                    <div class="grupo">
+                        <label for="unitario">Valor:</label>
+                        <input type="number" id="unitario" name="unitario"
+                            placeholder="Valor unitário:" class="campo campo-medio" required>
+                    </div>
+                    <input type="submit" id="adicionar-encomenda" class="botao bto-principal">
+                </form>
+            </section>
+            <section class="conversor">
+                <h2 class="titulo2">Conversor de Moeda</h2>
+                <section class="section_currency">
+                    <article class="article_info">
+                        <p class="info_amount">Valor</p>
+                        <p class="info_of">De:</p>
+                        <p class="info_to">Para:</p>
+        
+                        <input class="input_amount" autocomplete="none">
+                        <select name="list_one" class="list_one"></select>
+                        <button class="change"> <> </button>
+                        <select name="list_two" class="list_two"></select>
+                    </article>
+                </section>
+                <section class="section_result">
+                    <article class="article_result">
+                        <button class="result_btn">Converter</button>
+                        <p class="result_amount">00000000</p>
+                    </article>
+                </section>
+            </section>
+    </main>
+    <footer>
+        <div class="footer_container">
+            <p>&copy; 2024 LOJA - T&F. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+    <script src="scripts/calcula-total.js"></script>
+    <script src="scripts/form.js"></script>
+    <script src="scripts/filtrar.js"></script>
+    <script src="scripts/buscar-encomendas.js"></script>
+    <script src="scripts/cambio-api.js"></script>
+</body>
+
+</html>
